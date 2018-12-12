@@ -13,15 +13,72 @@
 
 */
 
+
 /* ===============================
    Mobile Styles: 0px to 640px 
    ===============================
 */
+/* Step 11 */
+@media only screen and (max-width: 640px) {
 
+    table,
+    tbody,
+    tr,
+    td,
+    th,
+    and caption {
+        display: block;
+    }
 
+    thead h1 {
+        display: none;
+    }
 
+    table caption {
+        color: white;
+        background-color: gray;
+        font-size: 1.5em;
+        line-height: 2em;
+    }
+
+    td {
+        border: 1px solid gray;
+        color: rgb(11, 12, 145);
+        position: relative;
+        padding-left: 40%;
+        min-height: 40px;
+    }
+
+    tr:nth-of-type(odd) {
+        background-color: rgb(255, 235, 178);
+        border: 2px solid gray;
+    }
+
+    td::after {
+        content: attr("data-date");
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px;
+        width: 40%;
+    }
+
+}
 
 /* =============================================
    Tablet and Desktop Styles: greater than 640px
    =============================================
 */
+
+@media only screen and (min-width: 641px) {
+    table {
+        background-image: url("lht_photo1.png");
+        background: no-repeat;
+        background-size: 40% auto;
+        width: 85%;
+        border: 6px double rgb(154, 64, 3);
+        border-collapse: collapse;
+        margin: 20px auto;
+        table-layout: fixed;
+    }
+}
