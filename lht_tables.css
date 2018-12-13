@@ -21,6 +21,7 @@
 /* Step 11 */
 @media only screen and (max-width: 640px) {
 
+    /* Displays them all as block so they take up each line */
     table,
     tbody,
     tr,
@@ -30,10 +31,12 @@
         display: block;
     }
 
+    /* Hides heading */
     thead h1 {
         display: none;
     }
 
+    /* Affects table caption */
     table caption {
         color: white;
         background-color: gray;
@@ -41,6 +44,7 @@
         line-height: 2em;
     }
 
+    /* Adds border and text color, padding, sets min height */
     td {
         border: 1px solid gray;
         color: rgb(11, 12, 145);
@@ -49,11 +53,13 @@
         min-height: 40px;
     }
 
+    /* All odd rable rows have different color and border */
     tr:nth-of-type(odd) {
         background-color: rgb(255, 235, 178);
         border: 2px solid gray;
     }
 
+    /* Adds padding and width */
     td::after {
         content: attr("data-date");
         position: absolute;
@@ -69,16 +75,55 @@
    Tablet and Desktop Styles: greater than 640px
    =============================================
 */
-
+/* Sets background image, width, border, margin*/
 @media only screen and (min-width: 641px) {
     table {
-        background-image: url("lht_photo1.png");
-        background: no-repeat;
-        background-size: 40% auto;
+        background-image: url(lht_photo1.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 40%;
         width: 85%;
         border: 6px double rgb(154, 64, 3);
         border-collapse: collapse;
         margin: 20px auto;
         table-layout: fixed;
+    }
+
+    /* Step 17, targets tableheadings and data cells, changes width adds border sets fontsize adds padding aligns text and allows word wrap */
+    th,
+    td {
+        width: 14.28%;
+        border: 1px solid gray;
+        font-size: .85em;
+        font-weight: normal;
+        padding: 5px;
+        text-align: center;
+        word-wrap: normal;
+    }
+
+    /* Step 18, changes background color and font of data cells */
+    td {
+        background-color: rgba(171, 171, 171, 0.6);
+        color: rgb(11, 12, 145);
+    }
+
+    /* Targets data-dates with Feb, changes background color and adds box shadow offset */
+    td[data-date~="Feb"] {
+        background-color: rgba(232, 214, 148, 0.6);
+        box-shadow: gray 0px 0px 20px
+    }
+
+    /* Aligns the top caption, adds bottom padding, bigger font, more spacing between letters */
+    caption {
+        text-align: center;
+        padding-bottom: 10px;
+        font-size: 1.2em;
+        letter-spacing: 3px;
+    }
+
+    /* Tableheadings now are brown with white text */
+    thead th {
+        background-color: rgb(154, 64, 3);
+        color: white;
     }
 }
